@@ -1,0 +1,9 @@
+C:\Users\walla\source\repos\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\walla\source\repos\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\walla\source\repos\Persistencia\bin\Debug\Modelo.dll
+C:\Users\walla\source\repos\Persistencia\bin\Debug\Modelo.pdb
+C:\Users\walla\source\repos\Persistencia\obj\Debug\Persistencia.csprojAssemblyReference.cache
+C:\Users\walla\source\repos\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\walla\source\repos\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\walla\source\repos\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\walla\source\repos\Persistencia\obj\Debug\Persistencia.pdb

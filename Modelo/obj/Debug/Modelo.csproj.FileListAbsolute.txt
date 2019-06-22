@@ -1,0 +1,6 @@
+C:\Users\walla\source\repos\Modelo\bin\Debug\Modelo.dll
+C:\Users\walla\source\repos\Modelo\bin\Debug\Modelo.pdb
+C:\Users\walla\source\repos\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache
+C:\Users\walla\source\repos\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\walla\source\repos\Modelo\obj\Debug\Modelo.dll
+C:\Users\walla\source\repos\Modelo\obj\Debug\Modelo.pdb
