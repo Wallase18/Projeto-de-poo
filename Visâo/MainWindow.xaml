@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Visâo"
         mc:Ignorable="d"
-        Title="Menu" Height="124.106" Width="467.227">
+        Title="Menu" Height="124.106" Width="201.286">
     <Grid>
-        <Button Content="Clientes" HorizontalAlignment="Left" Margin="41,46,0,0" VerticalAlignment="Top" Width="86" Click="Cliente"/>
-        <Button Content="Livro" HorizontalAlignment="Left" Margin="41,10,0,0" VerticalAlignment="Top" Width="86" Click="Livros"/>
+        <Button Content="Clientes" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Width="86" Click="Cliente"/>
+        <Button Content="Livro" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="86" Click="Livros"/>
+        <Button Content="Venda" HorizontalAlignment="Left" Margin="113,10,0,0" VerticalAlignment="Top" Width="75" Click="Venda"/>
     </Grid>
 </Window>

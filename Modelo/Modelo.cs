@@ -20,7 +20,7 @@ namespace Modelo
         public string NomeCliente { get; set; }
         public string Cpf { get; set; }
     }
-    public class Compra
+    public class Compras
     {
         public int IdCliente { get; set; }
         public string NomeLivro { get; set; }

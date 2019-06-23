@@ -36,5 +36,11 @@ namespace Visâo
             Cientec W = new Cientec();
             W.ShowDialog();
         }
+
+        private void Venda(object sender, RoutedEventArgs e)
+        {
+            Compra w = new Compra();
+            w.ShowDialog();
+        }
     }
 }

@@ -67,6 +67,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Compra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Livros.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -87,6 +91,9 @@
     </Compile>
     <Compile Include="CLivros.xaml.cs">
       <DependentUpon>CLivros.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Compra.xaml.cs">
+      <DependentUpon>Compra.xaml</DependentUpon>
     </Compile>
     <Compile Include="Livros.xaml.cs">
       <DependentUpon>Livros.xaml</DependentUpon>

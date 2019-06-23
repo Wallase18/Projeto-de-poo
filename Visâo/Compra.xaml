@@ -1,25 +1,21 @@
-﻿<Window x:Class="Visâo.Livros"
+﻿<Window x:Class="Visâo.Compra"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Visâo"
         mc:Ignorable="d"
-        Title="Livros" Height="284.598" Width="614.23">
+        Title="Compra" Height="284.598" Width="368.477">
     <Grid>
         <Button Content="Inserir" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="Inserir"/>
         <Button Content="Excluir" HorizontalAlignment="Left" Margin="90,10,0,0" VerticalAlignment="Top" Width="75" Click="Excluir"/>
         <TextBox Name="txtI" HorizontalAlignment="Left" Height="23" Margin="10,61,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="75"/>
         <TextBox Name="txtN" HorizontalAlignment="Left" Height="23" Margin="90,61,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="txtQ" HorizontalAlignment="Left" Height="23" Margin="215,61,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="txtE" HorizontalAlignment="Left" Height="23" Margin="340,61,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <DataGrid Name="grid" HorizontalAlignment="Left" Height="146" Margin="10,98,0,0" VerticalAlignment="Top" Width="575" SelectionChanged="Grid_SelectionChanged"/>
+        <TextBox Name="txtQ" HorizontalAlignment="Left" Height="23" Margin="215,61,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="117"/>
+        <DataGrid Name="grid" HorizontalAlignment="Left" Height="146" Margin="10,98,0,0" VerticalAlignment="Top" Width="322" SelectionChanged="Grid_SelectionChanged"/>
         <Button Content="Atualizar" HorizontalAlignment="Left" Margin="170,10,0,0" VerticalAlignment="Top" Width="75" Click="Atualizar"/>
-        <TextBox Name="txtP" HorizontalAlignment="Left" Height="23" Margin="465,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Margin="10,40,0,0"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top" Margin="90,40,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="ID do cliente" VerticalAlignment="Top" Margin="10,40,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Nome do livro" VerticalAlignment="Top" Margin="90,40,0,0"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Quantidade" VerticalAlignment="Top" Margin="215,40,0,0"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Editora" VerticalAlignment="Top" Margin="340,40,0,0"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Preço" VerticalAlignment="Top" Margin="465,40,0,0"/>
     </Grid>
 </Window>

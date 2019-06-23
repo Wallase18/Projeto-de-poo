@@ -28,3 +28,5 @@ C:\Users\walla\source\repos\Visâo\obj\Debug\CCliente.g.cs
 C:\Users\walla\source\repos\Visâo\obj\Debug\Cientec.g.cs
 C:\Users\walla\source\repos\Visâo\obj\Debug\CCliente.baml
 C:\Users\walla\source\repos\Visâo\obj\Debug\Cientec.baml
+C:\Users\walla\source\repos\Visâo\obj\Debug\Compra.g.cs
+C:\Users\walla\source\repos\Visâo\obj\Debug\Compra.baml

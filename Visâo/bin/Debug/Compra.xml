@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ArrayOfCompras xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Compras>
+    <IdCliente>1</IdCliente>
+    <NomeLivro>asd</NomeLivro>
+    <Quantidade>8</Quantidade>
+    <ValorTotal>0</ValorTotal>
+  </Compras>
+</ArrayOfCompras>

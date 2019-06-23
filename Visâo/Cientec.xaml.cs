@@ -41,7 +41,14 @@ namespace Visâo
         private void Excluir(object sender, RoutedEventArgs e)
         {
             Cliente C = new Cliente();
-            C.IdCliente = int.Parse(txtI.Text);
+            try
+            {
+                C.IdCliente = int.Parse(txtI.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Não é possivel exclui sem o ID");
+            }
             NCliente n = new NCliente();
             n.Delete(C);
             grid.ItemsSource = null;
@@ -51,7 +58,14 @@ namespace Visâo
         private void Atualizar(object sender, RoutedEventArgs e)
         {
             Cliente C = new Cliente();
-            C.IdCliente = int.Parse(txtI.Text);
+            try
+            {
+                C.IdCliente = int.Parse(txtI.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Não é um numero");
+            }
             C.NomeCliente = txtN.Text;
             C.Cpf = txtC.Text;
             NCliente n = new NCliente();

@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using Modelo;
+using Negocio;
+
+namespace Visâo
+{
+    /// <summary>
+    /// Lógica interna para Compra.xaml
+    /// </summary>
+    public partial class Compra : Window
+    {
+        public Compra()
+        {
+            InitializeComponent();
+        }
+
+        private void Inserir(object sender, RoutedEventArgs e)
+        {
+            Compras c = new Compras();
+            c.IdCliente = int.Parse(txtI.Text);
+            c.NomeLivro = txtN.Text;
+            c.Quantidade = int.Parse(txtQ.Text);
+            NCompras n = new NCompras();
+            n.Insert(c);
+            grid.ItemsSource = null;
+            grid.ItemsSource = n.Select();
+        }
+
+        private void Excluir(object sender, RoutedEventArgs e)
+        {
+            Compras l = new Compras();
+            l.IdCliente = int.Parse(txtI.Text);
+            NCompras n = new NCompras();
+            n.Delete(l);
+            grid.ItemsSource = null;
+            grid.ItemsSource = n.Select();
+        }
+
+        private void Atualizar(object sender, RoutedEventArgs e)
+        {
+            Compras c = new Compras();
+            c.IdCliente = int.Parse(txtI.Text);
+            c.NomeLivro = txtN.Text;
+            c.Quantidade = int.Parse(txtQ.Text);
+            NCompras n = new NCompras();
+            n.Update(c);
+            grid.ItemsSource = null;
+            grid.ItemsSource = n.Select();
+        }
+
+        private void Grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (grid.SelectedItem != null)
+            {
+                Compras c = grid.SelectedItem as Compras;
+                txtI.Text = c.IdCliente.ToString();
+                txtN.Text = c.NomeLivro;
+                txtQ.Text = c.Quantidade.ToString();
+            }
+        }
+    }
+}

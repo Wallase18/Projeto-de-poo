@@ -41,7 +41,14 @@ namespace Visâo
         private void Excluir(object sender, RoutedEventArgs e)
         {
             Livro l = new Livro();
-            l.id = int.Parse(txtI.Text);
+            try
+            {
+                l.id = int.Parse(txtI.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Não é possivel exclui sem o ID");
+            }
             NLivros n = new NLivros();
             n.Delete(l);
             grid.ItemsSource = null;
@@ -51,11 +58,32 @@ namespace Visâo
         private void Atualizar(object sender, RoutedEventArgs e)
         {
             Livro l = new Livro();
-            l.id = int.Parse(txtI.Text);
+            try
+            {
+                l.id = int.Parse(txtI.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Não é um numero");
+            }
             l.NomeLivro = txtN.Text;
-            l.Quantidade = int.Parse(txtQ.Text);
+            try
+            {
+                l.Quantidade = int.Parse(txtQ.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Você Não colocou um numero em Quantidade");
+            }
             l.Editora = txtE.Text;
-            l.Preço = double.Parse(txtP.Text);
+            try
+            {
+                l.Preço = double.Parse(txtP.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Você Não colocou um numero em preço");
+            }
             NLivros n = new NLivros();
             n.Update(l);
             grid.ItemsSource = null;

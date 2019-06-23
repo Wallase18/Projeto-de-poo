@@ -39,9 +39,23 @@ namespace Visâo
             Livro L = new Livro();
             L.id = 0;
             L.NomeLivro = txtN.Text;
-            L.Quantidade = int.Parse(txtQ.Text);
+            try
+            {
+                L.Quantidade = int.Parse(txtQ.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Você Não colocou um numero em Quantidade");
+            }
             L.Editora = txtE.Text;
-            L.Preço = double.Parse(txtP.Text);
+            try
+            {
+                L.Preço = double.Parse(txtP.Text);
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Você Não colocou um numero em preço");
+            }
             return L;
         }
     }

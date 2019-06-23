@@ -71,4 +71,35 @@ namespace Persistencia
             f.Close();
         }
     }
+    public class PCompra
+    {
+        private string arquivo = "Compra.xml";
+        public List<Compras> Open()
+        {
+            List<Compras> cs;
+            XmlSerializer x = new XmlSerializer(typeof(List<Compras>));
+            StreamReader f = null;
+            try
+            {
+                f = new StreamReader(arquivo, Encoding.Default);
+                cs = (List<Compras>)x.Deserialize(f);
+            }
+            catch
+            {
+                cs = new List<Compras>();
+            }
+            finally
+            {
+                if (f != null) f.Close();
+            }
+            return cs;
+        }
+        public void Save(List<Compras> cs)
+        {
+            XmlSerializer x = new XmlSerializer(typeof(List<Compras>));
+            StreamWriter f = new StreamWriter(arquivo, false, Encoding.Default);
+            x.Serialize(f, cs);
+            f.Close();
+        }
+    }
 }

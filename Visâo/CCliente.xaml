@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Visâo"
         mc:Ignorable="d"
-        Title="Cadastro Cliente" Height="130.179" Width="277.817">
+        Title="Cadastro Cliente" Height="130.179" Width="289.44">
     <Grid>
         <TextBox x:Name="txtN" HorizontalAlignment="Left" Height="23" Margin="10,35,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtC" HorizontalAlignment="Left" Height="23" Margin="135,35,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>

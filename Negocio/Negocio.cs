@@ -36,19 +36,33 @@ namespace Negocio
         {
             PLivros p = new PLivros();
             List<Livro> cs = p.Open();
-            Livro r = cs.Where(x => x.id == c.id).Single();
-            cs.Remove(r);
-            cs.Add(c);
-            p.Save(cs);
+            try
+            {
+                Livro r = cs.Where(x => x.id == c.id).Single();
+                cs.Remove(r);
+                cs.Add(c);
+                p.Save(cs);
+            }
+            catch(InvalidOperationException)
+            {
+
+            }
         }
 
         public void Delete(Livro c)
         {
             PLivros p = new PLivros();
             List<Livro> cs = p.Open();
-            Livro r = cs.Where(x => x.id == c.id).Single();
-            cs.Remove(r);
-            p.Save(cs);
+            try
+            {
+                Livro r = cs.Where(x => x.id == c.id).Single();
+                cs.Remove(r);
+                p.Save(cs);
+            }
+            catch (InvalidOperationException)
+            {
+
+            }
         }
     }
     public class NCliente
@@ -79,17 +93,74 @@ namespace Negocio
         {
             PCliente p = new PCliente();
             List<Cliente> cs = p.Open();
-            Cliente r = cs.Where(x => x.IdCliente == c.IdCliente).Single();
-            cs.Remove(r);
-            cs.Add(c);
-            p.Save(cs);
+            try
+            {
+                Cliente r = cs.Where(x => x.IdCliente == c.IdCliente).Single();
+                cs.Remove(r);
+                cs.Add(c);
+                p.Save(cs);
+            }
+            catch (InvalidOperationException)
+            {
+
+            }
         }
 
         public void Delete(Cliente c)
         {
             PCliente p = new PCliente();
             List<Cliente> cs = p.Open();
-            Cliente r = cs.Where(x => x.IdCliente == c.IdCliente).Single();
+            try
+            {
+                Cliente r = cs.Where(x => x.IdCliente == c.IdCliente).Single();
+                cs.Remove(r);
+                p.Save(cs);
+            }
+            catch (InvalidOperationException)
+            {
+
+            }
+        }
+    }
+    public class NCompras
+    {
+        public List<Compras> Select()
+        {
+            PCompra p = new PCompra();
+            return p.Open();
+        }
+        public List<Compras> Select(string s)
+        {
+            PCompra p = new PCompra();
+            List<Compras> cs = p.Open();
+            return cs.Where(x => x.NomeLivro.StartsWith(s)).ToList();
+        }
+        public void Insert(Compras c)
+        {
+            PCompra p = new PCompra();
+            List<Compras> cs = p.Open();
+            int Id = 1;
+            if (cs.Count > 0) Id = cs.Max(x => x.IdCliente) + 1;
+            c.IdCliente = Id;
+            cs.Add(c);
+            p.Save(cs);
+        }
+
+        public void Update(Compras c)
+        {
+            PCompra p = new PCompra();
+            List<Compras> cs = p.Open();
+            Compras r = cs.Where(x => x.IdCliente == c.IdCliente).Single();
+            cs.Remove(r);
+            cs.Add(c);
+            p.Save(cs);
+        }
+
+        public void Delete(Compras c)
+        {
+            PCompra p = new PCompra();
+            List<Compras> cs = p.Open();
+            Compras r = cs.Where(x => x.IdCliente == c.IdCliente).Single();
             cs.Remove(r);
             p.Save(cs);
         }
