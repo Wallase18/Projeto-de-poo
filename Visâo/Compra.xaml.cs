@@ -29,11 +29,32 @@ namespace Visâo
         private void Inserir(object sender, RoutedEventArgs e)
         {
              Compras c = new Compras();
-             c.IdCliente = int.Parse(txtI.Text);
-             c.NomeLivro = txtN.Text;
-             c.Quantidade = int.Parse(txtQ.Text);
-             c.ValorTotal = double.Parse(txtT.Text);
-             NCompras n = new NCompras();
+            try
+            {
+                c.IdCliente = int.Parse(txtI.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Não é um numero");
+            }
+            c.NomeLivro = txtN.Text;
+            try
+            {
+                c.Quantidade = int.Parse(txtQ.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Não é um numero");
+            }
+            try
+            {
+                c.ValorTotal = double.Parse(txtT.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Não é um numero");
+            }
+            NCompras n = new NCompras();
              n.Insert(c);
              grid.ItemsSource = null;
              grid.ItemsSource = n.Select();
@@ -52,10 +73,31 @@ namespace Visâo
         private void Atualizar(object sender, RoutedEventArgs e)
         {
             Compras c = new Compras();
-            c.IdCliente = int.Parse(txtI.Text);
+            try
+            {
+                c.IdCliente = int.Parse(txtI.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Não é um numero");
+            }
             c.NomeLivro = txtN.Text;
-            c.Quantidade = int.Parse(txtQ.Text);
-            c.ValorTotal = double.Parse(txtT.Text);
+            try
+            {
+                c.Quantidade = int.Parse(txtQ.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Não é um numero");
+            }
+            try
+            {
+                c.ValorTotal = double.Parse(txtT.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Não é um numero");
+            }
             NCompras n = new NCompras();
             n.Update(c);
             grid.ItemsSource = null;
