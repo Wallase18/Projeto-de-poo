@@ -24,6 +24,11 @@ namespace Visâo
         public Livros()
         {
             InitializeComponent();
+            Livro l = new Livro();
+            NLivros n = new NLivros();
+            n.Update(l);
+            grid.ItemsSource = null;
+            grid.ItemsSource = n.Select();
         }
 
         private void Inserir(object sender, RoutedEventArgs e)
@@ -57,37 +62,53 @@ namespace Visâo
 
         private void Atualizar(object sender, RoutedEventArgs e)
         {
-            Livro l = new Livro();
-            try
+            if (txtI.Text != null && txtQ.Text != null && txtP.Text != null)
             {
+                Livro l = new Livro();
+                try
+                {
+                    l.id = int.Parse(txtI.Text);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Não é um numero");
+                }
+                l.NomeLivro = txtN.Text;
+                try
+                {
+                    l.Quantidade = int.Parse(txtQ.Text);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Você Não colocou um numero em Quantidade");
+                }
+                l.Editora = txtE.Text;
+                try
+                {
+                    l.Preço = double.Parse(txtP.Text);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Você Não colocou um numero em preço");
+                }
+                NLivros n = new NLivros();
+                n.Update(l);
+                grid.ItemsSource = null;
+                grid.ItemsSource = n.Select();
+            }
+            else
+            {
+                Livro l = new Livro();
                 l.id = int.Parse(txtI.Text);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Não é um numero");
-            }
-            l.NomeLivro = txtN.Text;
-            try
-            {
+                l.NomeLivro = txtN.Text;
                 l.Quantidade = int.Parse(txtQ.Text);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Você Não colocou um numero em Quantidade");
-            }
-            l.Editora = txtE.Text;
-            try
-            {
+                l.Editora = txtE.Text;
                 l.Preço = double.Parse(txtP.Text);
+                NLivros n = new NLivros();
+                n.Update(l);
+                grid.ItemsSource = null;
+                grid.ItemsSource = n.Select();
             }
-            catch (FormatException)
-            {
-                MessageBox.Show("Você Não colocou um numero em preço");
-            }
-            NLivros n = new NLivros();
-            n.Update(l);
-            grid.ItemsSource = null;
-            grid.ItemsSource = n.Select();
         }
 
         private void Grid_SelectionChanged(object sender, SelectionChangedEventArgs e)

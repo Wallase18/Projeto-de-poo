@@ -24,6 +24,11 @@ namespace Visâo
         public Cientec()
         {
             InitializeComponent();
+            Cliente C = new Cliente();
+            NCliente n = new NCliente();
+            n.Update(C);
+            grid.ItemsSource = null;
+            grid.ItemsSource = n.Select();
         }
 
         private void Inserir(object sender, RoutedEventArgs e)

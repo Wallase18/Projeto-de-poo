@@ -30,3 +30,7 @@ C:\Users\walla\source\repos\Visâo\obj\Debug\CCliente.baml
 C:\Users\walla\source\repos\Visâo\obj\Debug\Cientec.baml
 C:\Users\walla\source\repos\Visâo\obj\Debug\Compra.g.cs
 C:\Users\walla\source\repos\Visâo\obj\Debug\Compra.baml
+C:\Users\walla\source\repos\Visâo\obj\Debug\ConsultaL.g.cs
+C:\Users\walla\source\repos\Visâo\obj\Debug\ComsultaC.g.cs
+C:\Users\walla\source\repos\Visâo\obj\Debug\ConsultaL.baml
+C:\Users\walla\source\repos\Visâo\obj\Debug\ComsultaC.baml

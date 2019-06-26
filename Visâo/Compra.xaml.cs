@@ -28,14 +28,15 @@ namespace Visâo
 
         private void Inserir(object sender, RoutedEventArgs e)
         {
-            Compras c = new Compras();
-            c.IdCliente = int.Parse(txtI.Text);
-            c.NomeLivro = txtN.Text;
-            c.Quantidade = int.Parse(txtQ.Text);
-            NCompras n = new NCompras();
-            n.Insert(c);
-            grid.ItemsSource = null;
-            grid.ItemsSource = n.Select();
+             Compras c = new Compras();
+             c.IdCliente = int.Parse(txtI.Text);
+             c.NomeLivro = txtN.Text;
+             c.Quantidade = int.Parse(txtQ.Text);
+             c.ValorTotal = double.Parse(txtT.Text);
+             NCompras n = new NCompras();
+             n.Insert(c);
+             grid.ItemsSource = null;
+             grid.ItemsSource = n.Select();
         }
 
         private void Excluir(object sender, RoutedEventArgs e)
@@ -54,6 +55,7 @@ namespace Visâo
             c.IdCliente = int.Parse(txtI.Text);
             c.NomeLivro = txtN.Text;
             c.Quantidade = int.Parse(txtQ.Text);
+            c.ValorTotal = double.Parse(txtT.Text);
             NCompras n = new NCompras();
             n.Update(c);
             grid.ItemsSource = null;
@@ -68,7 +70,20 @@ namespace Visâo
                 txtI.Text = c.IdCliente.ToString();
                 txtN.Text = c.NomeLivro;
                 txtQ.Text = c.Quantidade.ToString();
+                txtT.Text = c.ValorTotal.ToString();
             }
+        }
+
+        private void ConsultaL(object sender, RoutedEventArgs e)
+        {
+            ConsultaL w = new ConsultaL();
+            w.ShowDialog();
+        }
+
+        private void ConsultaC(object sender, RoutedEventArgs e)
+        {
+            ComsultaC w = new ComsultaC();
+            w.ShowDialog();
         }
     }
 }
