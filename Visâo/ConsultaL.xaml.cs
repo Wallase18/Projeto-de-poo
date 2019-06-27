@@ -30,10 +30,38 @@ namespace Visâo
             grid.ItemsSource = null;
             grid.ItemsSource = n.Select();
         }
-
+        public string getnome()
+        {
+            Compras c = new Compras();
+            c.NomeLivro = txtN.Text;
+            return c.NomeLivro;
+        }
         private void Grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Livro L = grid.SelectedItem as Livro;
+            if (grid.SelectedItem != null)
+            {
+                Livro L = grid.SelectedItem as Livro;
+                txtI.Text = L.id.ToString();
+                txtN.Text = L.NomeLivro;
+                txtQ.Text = L.Quantidade.ToString();
+                txtE.Text = L.Editora;
+                txtP.Text = L.Preço.ToString();
+            }
+        }
+        public double getp()
+        {
+            Compras c2 = new Compras();
+            c2.ValorTotal = double.Parse(txtP.Text);
+            return c2.ValorTotal;
+        }
+        private void Confirmar(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+
+        private void Cancelar(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
     }
 }

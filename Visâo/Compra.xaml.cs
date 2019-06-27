@@ -28,36 +28,14 @@ namespace Visâo
 
         private void Inserir(object sender, RoutedEventArgs e)
         {
-             Compras c = new Compras();
-            try
+            Produtos w = new Produtos();
+            if (w.ShowDialog().Value)
             {
-                c.IdCliente = int.Parse(txtI.Text);
+                NCompras n = new NCompras();
+                n.Insert(w.GetP());
+                grid.ItemsSource = null;
+                grid.ItemsSource = n.Select();
             }
-            catch (FormatException)
-            {
-                MessageBox.Show("Não é um numero");
-            }
-            c.NomeLivro = txtN.Text;
-            try
-            {
-                c.Quantidade = int.Parse(txtQ.Text);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Não é um numero");
-            }
-            try
-            {
-                c.ValorTotal = double.Parse(txtT.Text);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Não é um numero");
-            }
-            NCompras n = new NCompras();
-             n.Insert(c);
-             grid.ItemsSource = null;
-             grid.ItemsSource = n.Select();
         }
 
         private void Excluir(object sender, RoutedEventArgs e)
@@ -72,6 +50,7 @@ namespace Visâo
 
         private void Atualizar(object sender, RoutedEventArgs e)
         {
+
             Compras c = new Compras();
             try
             {
@@ -114,18 +93,6 @@ namespace Visâo
                 txtQ.Text = c.Quantidade.ToString();
                 txtT.Text = c.ValorTotal.ToString();
             }
-        }
-
-        private void ConsultaL(object sender, RoutedEventArgs e)
-        {
-            ConsultaL w = new ConsultaL();
-            w.ShowDialog();
-        }
-
-        private void ConsultaC(object sender, RoutedEventArgs e)
-        {
-            ComsultaC w = new ComsultaC();
-            w.ShowDialog();
         }
     }
 }

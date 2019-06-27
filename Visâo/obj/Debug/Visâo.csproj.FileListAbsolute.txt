@@ -34,3 +34,5 @@ C:\Users\walla\source\repos\Visâo\obj\Debug\ConsultaL.g.cs
 C:\Users\walla\source\repos\Visâo\obj\Debug\ComsultaC.g.cs
 C:\Users\walla\source\repos\Visâo\obj\Debug\ConsultaL.baml
 C:\Users\walla\source\repos\Visâo\obj\Debug\ComsultaC.baml
+C:\Users\walla\source\repos\Visâo\obj\Debug\Produtos.g.cs
+C:\Users\walla\source\repos\Visâo\obj\Debug\Produtos.baml

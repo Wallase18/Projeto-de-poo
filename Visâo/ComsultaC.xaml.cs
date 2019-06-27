@@ -33,7 +33,28 @@ namespace Visâo
 
         private void Grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Cliente c = grid.SelectedItem as Cliente;
+            if (grid.SelectedItem != null)
+            {
+                Cliente C = grid.SelectedItem as Cliente;
+                txtI.Text = C.IdCliente.ToString();
+                txtN.Text = C.NomeCliente;
+                txtC.Text = C.Cpf;
+            }
+        }
+        public int getid()
+        {
+            Compras c = new Compras() ;
+            c.IdCliente = int.Parse(txtI.Text);
+            return c.IdCliente;
+        }
+        private void Confirmar(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+
+        private void Cancelar(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
     }
 }

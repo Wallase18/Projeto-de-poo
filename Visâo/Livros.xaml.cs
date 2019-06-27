@@ -62,8 +62,6 @@ namespace Visâo
 
         private void Atualizar(object sender, RoutedEventArgs e)
         {
-            if (txtI.Text != null && txtQ.Text != null && txtP.Text != null)
-            {
                 Livro l = new Livro();
                 try
                 {
@@ -95,22 +93,7 @@ namespace Visâo
                 n.Update(l);
                 grid.ItemsSource = null;
                 grid.ItemsSource = n.Select();
-            }
-            else
-            {
-                Livro l = new Livro();
-                l.id = int.Parse(txtI.Text);
-                l.NomeLivro = txtN.Text;
-                l.Quantidade = int.Parse(txtQ.Text);
-                l.Editora = txtE.Text;
-                l.Preço = double.Parse(txtP.Text);
-                NLivros n = new NLivros();
-                n.Update(l);
-                grid.ItemsSource = null;
-                grid.ItemsSource = n.Select();
-            }
         }
-
         private void Grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (grid.SelectedItem != null)
